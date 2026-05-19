@@ -54,6 +54,7 @@
   const homeLink = document.querySelector('.nav-links a[href="#hero"]');
   const navToggle = document.getElementById('nav-toggle');
   const navMenu = document.getElementById('nav-menu');
+  const backToTop = document.getElementById('back-to-top');
 
   const setActiveNav = (id) => {
     navLinks.forEach(link => {
@@ -103,7 +104,16 @@
     if (homeLink && window.scrollY < 200) {
       setActiveNav('hero');
     }
+    if (backToTop) {
+      backToTop.classList.toggle('show', window.scrollY > window.innerHeight);
+    }
   });
+
+  if (backToTop) {
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
 
   // ── NAV ACTIVE LINK ──
   if (navSections.length) {
