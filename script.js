@@ -52,6 +52,8 @@
     .map(link => document.querySelector(link.getAttribute('href')))
     .filter(Boolean);
   const homeLink = document.querySelector('.nav-links a[href="#hero"]');
+  const navToggle = document.getElementById('nav-toggle');
+  const navMenu = document.getElementById('nav-menu');
 
   const setActiveNav = (id) => {
     navLinks.forEach(link => {
@@ -59,6 +61,42 @@
       link.classList.toggle('active', isActive);
     });
   };
+
+  const closeNavMenu = () => {
+    if (!navMenu || !navToggle) return;
+    navMenu.classList.remove('open');
+    navToggle.classList.remove('open');
+    navToggle.setAttribute('aria-expanded', 'false');
+  };
+
+  if (navToggle && navMenu) {
+    navToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = navMenu.classList.toggle('open');
+      navToggle.classList.toggle('open', isOpen);
+      navToggle.setAttribute('aria-expanded', String(isOpen));
+    });
+  }
+
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      if (navMenu && navMenu.classList.contains('open')) {
+        closeNavMenu();
+      }
+    });
+  });
+
+  document.addEventListener('click', (e) => {
+    if (navMenu && navMenu.classList.contains('open') && navbar && !navbar.contains(e.target)) {
+      closeNavMenu();
+    }
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 768) {
+      closeNavMenu();
+    }
+  });
 
   window.addEventListener('scroll',()=>{
     navbar.classList.toggle('scrolled', window.scrollY>60);
