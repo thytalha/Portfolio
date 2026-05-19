@@ -51,23 +51,24 @@
   const navSections = Array.from(navLinks)
     .map(link => document.querySelector(link.getAttribute('href')))
     .filter(Boolean);
+  const homeLink = document.querySelector('.nav-links a[href="#hero"]');
+
+  const setActiveNav = (id) => {
+    navLinks.forEach(link => {
+      const isActive = id && link.getAttribute('href') === `#${id}`;
+      link.classList.toggle('active', isActive);
+    });
+  };
 
   window.addEventListener('scroll',()=>{
     navbar.classList.toggle('scrolled', window.scrollY>60);
-    if (window.scrollY < 200) {
-      navLinks.forEach(link => link.classList.remove('active'));
+    if (homeLink && window.scrollY < 200) {
+      setActiveNav('hero');
     }
   });
 
   // ── NAV ACTIVE LINK ──
   if (navSections.length) {
-    const setActiveNav = (id) => {
-      navLinks.forEach(link => {
-        const isActive = id && link.getAttribute('href') === `#${id}`;
-        link.classList.toggle('active', isActive);
-      });
-    };
-
     const navObserver = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
