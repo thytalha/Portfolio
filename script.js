@@ -46,9 +46,38 @@
   setTimeout(type,1200);
 
   // ── NAVBAR SCROLL ──
+  const navbar = document.getElementById('navbar');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  const navSections = Array.from(navLinks)
+    .map(link => document.querySelector(link.getAttribute('href')))
+    .filter(Boolean);
+
   window.addEventListener('scroll',()=>{
-    document.getElementById('navbar').classList.toggle('scrolled', window.scrollY>60);
+    navbar.classList.toggle('scrolled', window.scrollY>60);
+    if (window.scrollY < 200) {
+      navLinks.forEach(link => link.classList.remove('active'));
+    }
   });
+
+  // ── NAV ACTIVE LINK ──
+  if (navSections.length) {
+    const setActiveNav = (id) => {
+      navLinks.forEach(link => {
+        const isActive = id && link.getAttribute('href') === `#${id}`;
+        link.classList.toggle('active', isActive);
+      });
+    };
+
+    const navObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setActiveNav(entry.target.id);
+        }
+      });
+    }, { rootMargin: '-45% 0px -45% 0px', threshold: 0.01 });
+
+    navSections.forEach(section => navObserver.observe(section));
+  }
 
   // ── SCROLL REVEAL ──
   const obs = new IntersectionObserver(entries=>{
