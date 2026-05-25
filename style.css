@@ -904,16 +904,16 @@ footer span {
 }
 .reveal[data-reveal="up"] {
   --reveal-x: 0px;
-  --reveal-y: 120px;
+  --reveal-y: 60px;
 }
 .reveal[data-reveal="down"] {
   --reveal-x: 0px;
-  --reveal-y: -120px;
+  --reveal-y: -60px;
 }
 .reveal[data-reveal="zoom"] {
-  --reveal-scale: 0.8;
-  --reveal-blur: 15px;
-  --reveal-y: 30px;
+  --reveal-scale: 0.9;
+  --reveal-blur: 10px;
+  --reveal-y: 20px;
 }
 .reveal[data-reveal="tilt-left"] {
   --reveal-x: -100px;

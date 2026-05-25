@@ -303,7 +303,7 @@ const revealObserver = new IntersectionObserver(
       }
     });
   },
-  { threshold: 0.15, rootMargin: "0px 0px -10% 0px" },
+  { threshold: 0.02, rootMargin: "100px 0px 100px 0px" },
 );
 
 document
