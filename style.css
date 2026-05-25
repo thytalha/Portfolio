@@ -401,7 +401,7 @@ section {
 
 /* ABOUT */
 #about {
-  padding: 120px 10vw;
+  padding: 80px 10vw;
 }
 .section-label {
   font-size: 0.65rem;
@@ -498,7 +498,7 @@ section {
 
 /* SKILLS */
 #skills {
-  padding: 120px 10vw;
+  padding: 80px 10vw;
   background: linear-gradient(
     to bottom,
     transparent,
@@ -608,7 +608,7 @@ section {
 
 /* PROJECTS */
 #projects {
-  padding: 120px 10vw;
+  padding: 80px 10vw;
 }
 .projects-grid {
   display: grid;
@@ -710,7 +710,7 @@ section {
 
 /* CERTIFICATIONS */
 #certs {
-  padding: 120px 10vw;
+  padding: 80px 10vw;
   background: linear-gradient(
     to bottom,
     transparent,
@@ -793,7 +793,7 @@ section {
 
 /* CONTACT */
 #contact {
-  padding: 120px 10vw 80px;
+  padding: 80px 10vw 60px;
 }
 .contact-inner {
   display: grid;
