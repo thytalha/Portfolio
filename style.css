@@ -879,13 +879,13 @@ footer span {
 /* SCROLL REVEAL */
 .reveal {
   opacity: 0;
-  transform: translate3d(var(--reveal-x, 0), var(--reveal-y, 30px), 0)
+  transform: translate3d(var(--reveal-x, 0), var(--reveal-y, 40px), 0)
     scale(var(--reveal-scale, 1)) rotate(var(--reveal-rotate, 0deg));
-  filter: blur(var(--reveal-blur, 0));
+  filter: blur(var(--reveal-blur, 10px));
   transition:
-    opacity 0.7s ease,
-    transform 0.9s cubic-bezier(0.16, 1, 0.3, 1),
-    filter 0.9s ease;
+    opacity 1s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 1.2s cubic-bezier(0.16, 1, 0.3, 1),
+    filter 1s cubic-bezier(0.16, 1, 0.3, 1);
   transition-delay: var(--reveal-delay, 0s);
   will-change: transform, opacity, filter;
 }
@@ -895,33 +895,33 @@ footer span {
   filter: blur(0);
 }
 .reveal[data-reveal="left"] {
-  --reveal-x: -60px;
+  --reveal-x: -150px;
   --reveal-y: 0px;
 }
 .reveal[data-reveal="right"] {
-  --reveal-x: 60px;
+  --reveal-x: 150px;
   --reveal-y: 0px;
 }
 .reveal[data-reveal="up"] {
   --reveal-x: 0px;
-  --reveal-y: 60px;
+  --reveal-y: 120px;
 }
 .reveal[data-reveal="down"] {
   --reveal-x: 0px;
-  --reveal-y: -60px;
+  --reveal-y: -120px;
 }
 .reveal[data-reveal="zoom"] {
-  --reveal-scale: 0.92;
-  --reveal-blur: 8px;
-  --reveal-y: 10px;
+  --reveal-scale: 0.8;
+  --reveal-blur: 15px;
+  --reveal-y: 30px;
 }
 .reveal[data-reveal="tilt-left"] {
-  --reveal-x: -40px;
-  --reveal-rotate: -2deg;
+  --reveal-x: -100px;
+  --reveal-rotate: -8deg;
 }
 .reveal[data-reveal="tilt-right"] {
-  --reveal-x: 40px;
-  --reveal-rotate: 2deg;
+  --reveal-x: 100px;
+  --reveal-rotate: 8deg;
 }
 
 /* ANIMATIONS */

@@ -164,13 +164,24 @@ window.addEventListener("resize", () => {
 });
 
 window.addEventListener("scroll", () => {
-  navbar.classList.toggle("scrolled", window.scrollY > 60);
-  if (homeLink && window.scrollY < 200) {
+  const scrolled = window.scrollY;
+
+  navbar.classList.toggle("scrolled", scrolled > 60);
+  if (homeLink && scrolled < 200) {
     setActiveNav("hero");
   }
   if (backToTop) {
-    backToTop.classList.toggle("show", window.scrollY > window.innerHeight);
+    backToTop.classList.toggle("show", scrolled > window.innerHeight);
   }
+
+  // Parallax elements
+  const heroGlow = document.querySelector(".hero-glow");
+  const heroGlow2 = document.querySelector(".hero-glow2");
+  const heroGrid = document.querySelector(".hero-grid-bg");
+
+  if (heroGlow) heroGlow.style.transform = `translateY(${scrolled * 0.4}px)`;
+  if (heroGlow2) heroGlow2.style.transform = `translateY(${scrolled * 0.2}px)`;
+  if (heroGrid) heroGrid.style.transform = `translateY(${scrolled * 0.15}px)`;
 });
 
 if (backToTop) {
@@ -233,50 +244,53 @@ const addReveal = (elements, options = {}) => {
   });
 };
 
+addReveal(document.querySelectorAll("section:not(#hero)"), {
+  direction: (i) => (i % 2 === 0 ? "left" : "right"),
+});
+
 addReveal(document.querySelectorAll(".section-label"), {
   direction: "left",
-  delayStep: 0.05,
+  delayStep: 0.1,
 });
 addReveal(document.querySelectorAll(".section-title"), {
-  direction: "up",
-  delayStep: 0.05,
+  direction: "zoom",
+  delayStep: 0.1,
 });
 addReveal(document.querySelectorAll("#about .about-text"), {
   direction: "left",
-  delay: 0.05,
+  delay: 0.15,
 });
 addReveal(document.querySelectorAll("#about .about-stats"), {
   direction: "right",
-  delay: 0.1,
+  delay: 0.2,
 });
 addReveal(document.querySelectorAll(".about-stats .stat-card"), {
-  direction: "up",
-  delayStep: 0.06,
+  direction: "zoom",
+  delayStep: 0.1,
 });
 addReveal(document.querySelectorAll(".skills-grid .skill-category"), {
-  direction: (i) => (i % 2 === 0 ? "left" : "right"),
-  delayStep: 0.08,
+  direction: (i) => (i % 2 === 0 ? "tilt-left" : "tilt-right"),
+  delayStep: 0.15,
 });
 addReveal(document.querySelectorAll(".projects-grid .project-card"), {
-  direction: (i) => ["left", "up", "right"][i % 3],
-  delayStep: 0.08,
-  rotate: (i) => (i % 2 === 0 ? "-1deg" : "1deg"),
+  direction: (i) => ["tilt-left", "up", "tilt-right"][i % 3],
+  delayStep: 0.15,
 });
 addReveal(document.querySelectorAll(".certs-list .cert-item"), {
   direction: (i) => (i % 2 === 0 ? "left" : "right"),
-  delayStep: 0.06,
+  delayStep: 0.1,
 });
 addReveal(document.querySelectorAll("#contact .contact-left"), {
   direction: "left",
-  delay: 0.05,
+  delay: 0.1,
 });
 addReveal(document.querySelectorAll("#contact .contact-info"), {
   direction: "right",
-  delay: 0.08,
+  delay: 0.15,
 });
 addReveal(document.querySelectorAll(".contact-links .contact-link"), {
-  direction: "right",
-  delayStep: 0.04,
+  direction: "up",
+  delayStep: 0.1,
 });
 
 const revealObserver = new IntersectionObserver(
@@ -295,17 +309,31 @@ document
   .querySelectorAll(".reveal")
   .forEach((el) => revealObserver.observe(el));
 
-// ── PROJECT CARD GLOW ──
-document.querySelectorAll(".project-card").forEach((card) => {
-  card.addEventListener("mousemove", (e) => {
-    const r = card.getBoundingClientRect();
-    card.style.setProperty(
-      "--mx",
-      ((e.clientX - r.left) / r.width) * 100 + "%",
-    );
-    card.style.setProperty(
-      "--my",
-      ((e.clientY - r.top) / r.height) * 100 + "%",
-    );
+// ── CARD GLOW & 3D TILT ──
+document
+  .querySelectorAll(".project-card, .skill-category, .stat-card")
+  .forEach((card) => {
+    card.addEventListener("mousemove", (e) => {
+      const r = card.getBoundingClientRect();
+      const x = e.clientX - r.left;
+      const y = e.clientY - r.top;
+
+      // For glow
+      card.style.setProperty("--mx", (x / r.width) * 100 + "%");
+      card.style.setProperty("--my", (y / r.height) * 100 + "%");
+
+      // For 3D Tilt
+      const centerX = r.width / 2;
+      const centerY = r.height / 2;
+      const rotateX = ((y - centerY) / centerY) * -10;
+      const rotateY = ((x - centerX) / centerX) * 10;
+
+      card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02) translateY(-4px)`;
+      card.style.transition = "transform 0.1s ease-out";
+    });
+
+    card.addEventListener("mouseleave", () => {
+      card.style.transform = "";
+      card.style.transition = "all 0.4s";
+    });
   });
-});
