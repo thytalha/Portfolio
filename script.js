@@ -90,7 +90,8 @@ function type() {
   } else {
     txt = target.slice(0, --ci);
   }
-  document.getElementById("typed-text").textContent = txt;
+  const el = document.getElementById("typed-text");
+  if (el) el.textContent = txt;
   if (!del && ci === target.length) {
     setTimeout(() => (del = true), 1800);
     setTimeout(type, 100);
