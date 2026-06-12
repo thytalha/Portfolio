@@ -324,6 +324,7 @@ section {
 }
 .btn-primary:hover {
   background: #fff;
+  color: var(--cyan);
   transform: translateY(-2px);
   box-shadow: 0 12px 40px rgba(0, 165, 184, 0.4);
   animation: floatHover 0.6s ease;
