@@ -64,7 +64,7 @@ function drawStars() {
     if (s.a > 1 || s.a < 0) s.s *= -1;
     ctx.beginPath();
     ctx.arc(s.x % W, s.y % H, s.r, 0, Math.PI * 2);
-    ctx.fillStyle = `rgba(200,230,255,${s.a * 0.7})`;
+    ctx.fillStyle = `rgba(0,165,184,${s.a * 0.7})`;
     ctx.fill();
   });
   requestAnimationFrame(drawStars);
