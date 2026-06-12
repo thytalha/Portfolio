@@ -264,6 +264,13 @@ section {
   opacity: 0;
   animation: fadeUp 0.8s 0.5s forwards;
 }
+.hero-greeting {
+  font-size: clamp(1.5rem, 4vw, 3rem);
+  font-weight: 500;
+  color: var(--muted);
+  display: block;
+  margin-bottom: 0px;
+}
 .hero-name em {
   font-style: normal;
   color: transparent;
@@ -1105,6 +1112,9 @@ footer span {
     overflow-wrap: normal;
     word-break: normal;
   }
+  .hero-greeting {
+    margin-bottom: 0px;
+  }
   .hero-tag {
     letter-spacing: 2px;
   }
@@ -1142,6 +1152,9 @@ footer span {
   .hero-name {
     font-size: clamp(2rem, 7.4vw, 3.6rem);
     line-height: 1.02;
+  }
+  .hero-greeting {
+    margin-bottom: 0px;
   }
   .hero-name em {
     -webkit-text-stroke-width: 1px;
