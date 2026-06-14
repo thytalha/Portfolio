@@ -257,7 +257,7 @@ section {
 }
 .hero-name {
   font-family: "Syne", sans-serif;
-  font-size: clamp(3rem, 8vw, 7rem);
+  font-size: clamp(4.5rem, 10vw, 8.5rem);
   font-weight: 800;
   line-height: 0.95;
   color: var(--text);
@@ -1108,7 +1108,7 @@ footer span {
 
 @media (max-width: 640px) {
   .hero-name {
-    font-size: clamp(2.2rem, 8.2vw, 4.2rem);
+    font-size: clamp(3rem, 10vw, 5.5rem);
     line-height: 1;
     overflow-wrap: normal;
     word-break: normal;
@@ -1151,7 +1151,7 @@ footer span {
     padding-right: 5vw;
   }
   .hero-name {
-    font-size: clamp(2rem, 7.4vw, 3.6rem);
+    font-size: clamp(2.6rem, 10vw, 4.2rem);
     line-height: 1.02;
   }
   .hero-greeting {
