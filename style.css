@@ -33,46 +33,58 @@ body {
   color: var(--text);
   font-family: "DM Mono", monospace;
   overflow-x: hidden;
-  cursor: none;
 }
 
-/* CUSTOM CURSOR */
-#cursor {
-  width: 12px;
-  height: 12px;
-  background: var(--cyan);
-  border-radius: 50%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  pointer-events: none;
-  z-index: 9999;
-  transform: translate(-50%, -50%);
-  transition:
-    transform 0.1s,
-    width 0.3s,
-    height 0.3s,
-    background 0.3s;
-  mix-blend-mode: multiply;
-}
+/* CUSTOM CURSOR - Only enabled for PC / devices with mouse and hover support */
+#cursor,
 #cursor-ring {
-  width: 36px;
-  height: 36px;
-  border: 1.5px solid rgba(0, 165, 184, 0.4);
-  border-radius: 50%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  pointer-events: none;
-  z-index: 9998;
-  transform: translate(-50%, -50%);
-  transition:
-    transform 0.15s ease-out,
-    width 0.3s,
-    height 0.3s;
+  display: none;
 }
-body:hover #cursor {
-  opacity: 1;
+
+@media (hover: hover) and (pointer: fine) {
+  body {
+    cursor: none;
+  }
+  #cursor {
+    display: block;
+    width: 12px;
+    height: 12px;
+    background: var(--cyan);
+    border-radius: 50%;
+    position: fixed;
+    top: -100px;
+    left: -100px;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition:
+      transform 0.1s,
+      width 0.3s,
+      height 0.3s,
+      background 0.3s,
+      opacity 0.3s;
+    mix-blend-mode: multiply;
+    opacity: 0;
+  }
+  #cursor-ring {
+    display: block;
+    width: 36px;
+    height: 36px;
+    border: 1.5px solid rgba(0, 165, 184, 0.4);
+    border-radius: 50%;
+    position: fixed;
+    top: -100px;
+    left: -100px;
+    pointer-events: none;
+    z-index: 9998;
+    transform: translate(-50%, -50%);
+    transition:
+      transform 0.15s ease-out,
+      width 0.3s,
+      height 0.3s,
+      opacity 0.3s;
+    opacity: 0;
+  }
 }
 
 /* CANVAS */
