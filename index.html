@@ -444,5 +444,11 @@
     </button>
 
     <script src="script.js"></script>
+    <script>
+      // this disables the right-click menu across your entire website
+      document.addEventListener("contextmenu", function (event) {
+        event.preventDefault();
+      });
+    </script>
   </body>
 </html>
