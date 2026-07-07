@@ -26,13 +26,19 @@ html {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 body {
   background: var(--bg);
   color: var(--text);
   font-family: "DM Mono", monospace;
+  width: 100%;
+  max-width: 100%;
   overflow-x: hidden;
+  position: relative;
 }
 
 /* CUSTOM CURSOR - Only enabled for PC / devices with mouse and hover support */
@@ -242,16 +248,22 @@ nav.scrolled {
 section {
   position: relative;
   z-index: 1;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
 }
 
 /* HERO */
 #hero {
   min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
   padding: 0 10vw;
+  width: 100%;
+  max-width: 100%;
   overflow: hidden;
 }
 .hero-tag {
@@ -528,9 +540,10 @@ section {
 }
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
   gap: 20px;
   margin-top: 50px;
+  width: 100%;
 }
 .skill-category {
   background: var(--glass);
@@ -632,9 +645,10 @@ section {
 }
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
   gap: 24px;
   margin-top: 50px;
+  width: 100%;
 }
 .project-card {
   background: var(--glass);
@@ -771,9 +785,10 @@ section {
 }
 .certs-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
   gap: 24px;
   margin-top: 50px;
+  width: 100%;
 }
 .cert-card {
   background: var(--glass);
@@ -924,8 +939,8 @@ section {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   z-index: 1000;
   display: flex;
   align-items: center;
@@ -1319,6 +1334,18 @@ footer span {
 }
 
 /* RESPONSIVE */
+@media (max-width: 1024px) {
+  #hero,
+  #about,
+  #skills,
+  #projects,
+  #certs,
+  #contact {
+    padding-left: 8vw;
+    padding-right: 8vw;
+  }
+}
+
 @media (max-width: 768px) {
   nav {
     padding: 16px 24px;
@@ -1369,6 +1396,24 @@ footer span {
     right: 20px;
     bottom: 20px;
   }
+  .reveal[data-reveal="left"],
+  .reveal[data-reveal="tilt-left"] {
+    --reveal-x: -30px;
+  }
+  .reveal[data-reveal="right"],
+  .reveal[data-reveal="tilt-right"] {
+    --reveal-x: 30px;
+  }
+  .hero-glow {
+    width: 320px;
+    height: 320px;
+    right: -50px;
+  }
+  .hero-glow2 {
+    width: 280px;
+    height: 280px;
+    left: -50px;
+  }
 }
 
 @media (max-width: 640px) {
@@ -1387,25 +1432,19 @@ footer span {
   .hero-title {
     font-size: 0.9rem;
   }
-  .projects-grid {
-    grid-template-columns: 1fr;
-  }
-  .skills-grid {
-    grid-template-columns: 1fr;
-  }
+  .projects-grid,
+  .skills-grid,
+  .certs-grid,
   .about-stats {
     grid-template-columns: 1fr;
   }
-  .cert-item {
+  .cert-card {
     flex-direction: column;
     align-items: flex-start;
   }
-  .cert-date {
-    align-self: flex-start;
-  }
 }
 
-@media (max-width: 420px) {
+@media (max-width: 480px) {
   #hero,
   #about,
   #skills,
@@ -1416,8 +1455,8 @@ footer span {
     padding-right: 5vw;
   }
   .hero-name {
-    font-size: clamp(2.6rem, 10vw, 4.2rem);
-    line-height: 1.02;
+    font-size: clamp(2.4rem, 9.5vw, 4rem);
+    line-height: 1.05;
   }
   .hero-greeting {
     margin-bottom: 0px;
@@ -1429,6 +1468,45 @@ footer span {
     gap: 12px;
   }
   .btn {
-    padding: 12px 22px;
+    padding: 12px 20px;
+    font-size: 0.7rem;
+  }
+  nav {
+    padding: 14px 16px;
+  }
+  nav.scrolled {
+    padding: 10px 16px;
+  }
+  .nav-links {
+    left: 16px;
+    right: 16px;
+  }
+  .project-card,
+  .cert-card,
+  .skill-category,
+  .stat-card {
+    padding: 20px;
+  }
+  .contact-link {
+    padding: 12px 14px;
+    font-size: 0.75rem;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+  .reveal[data-reveal="left"],
+  .reveal[data-reveal="tilt-left"] {
+    --reveal-x: -15px;
+  }
+  .reveal[data-reveal="right"],
+  .reveal[data-reveal="tilt-right"] {
+    --reveal-x: 15px;
+  }
+  .hero-glow {
+    width: 240px;
+    height: 240px;
+  }
+  .hero-glow2 {
+    width: 200px;
+    height: 200px;
   }
 }

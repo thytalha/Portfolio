@@ -91,7 +91,7 @@ let stars = [],
   W,
   H;
 function resize() {
-  W = canvas.width = window.innerWidth;
+  W = canvas.width = document.documentElement.clientWidth || window.innerWidth;
   H = canvas.height = window.innerHeight;
 }
 resize();
