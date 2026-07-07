@@ -24,25 +24,9 @@
     <canvas id="starfield"></canvas>
 
     <!-- NAV -->
+    <!-- NAV -->
     <nav id="navbar">
-      <a href="#hero" class="nav-logo" aria-label="Home">
-        <img src="favicon-32x32.png" alt="Talha Logo" class="nav-logo-img" />
-        TALHA
-      </a>
-      <ul class="nav-links" id="nav-menu">
-        <li><a href="#hero">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#certs">Certificates</a></li>
-        <li class="mobile-only-item"><a href="#contact">Contact</a></li>
-      </ul>
-      <div class="nav-actions">
-        <a href="#contact" class="nav-cta-btn" aria-label="Contact and Hire Me">
-          <span class="status-dot"></span>
-          <span>Let's Talk</span>
-          <i class="fa-solid fa-paper-plane"></i>
-        </a>
+      <div class="nav-left">
         <button
           class="nav-toggle"
           id="nav-toggle"
@@ -55,8 +39,55 @@
           <span></span>
           <span></span>
         </button>
+        <a href="#hero" class="nav-logo" aria-label="Home">
+          <img src="favicon-32x32.png" alt="Talha Logo" class="nav-logo-img" />
+          TALHA
+        </a>
+      </div>
+      <div class="nav-actions">
+        <a href="#contact" class="nav-cta-btn" aria-label="Contact and Hire Me">
+          <span class="status-dot"></span>
+          <span>Let's Talk</span>
+          <i class="fa-solid fa-paper-plane"></i>
+        </a>
       </div>
     </nav>
+
+    <!-- SIDEBAR OVERLAY -->
+    <div id="nav-overlay" class="side-menu-overlay"></div>
+
+    <!-- LEFT SIDEBAR MENU -->
+    <aside id="nav-menu" class="side-menu" aria-label="Navigation Menu">
+      <div class="side-menu-header">
+        <a href="#hero" class="side-menu-logo" aria-label="Home">
+          <img src="favicon-32x32.png" alt="Talha Logo" class="side-logo-img" />
+          <span>TALHA</span>
+        </a>
+        <button id="side-menu-close" class="side-menu-close" aria-label="Close menu">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <div class="side-menu-content">
+        <div class="side-menu-label">Navigation //</div>
+        <ul class="nav-links side-nav-links">
+          <li><a href="#hero" class="side-nav-link"><span class="nav-num">01</span><span class="nav-text">Home</span></a></li>
+          <li><a href="#about" class="side-nav-link"><span class="nav-num">02</span><span class="nav-text">About</span></a></li>
+          <li><a href="#skills" class="side-nav-link"><span class="nav-num">03</span><span class="nav-text">Skills</span></a></li>
+          <li><a href="#projects" class="side-nav-link"><span class="nav-num">04</span><span class="nav-text">Projects</span></a></li>
+          <li><a href="#certs" class="side-nav-link"><span class="nav-num">05</span><span class="nav-text">Certificates</span></a></li>
+          <li><a href="#contact" class="side-nav-link"><span class="nav-num">06</span><span class="nav-text">Contact</span></a></li>
+        </ul>
+      </div>
+      <div class="side-menu-footer">
+        <div class="side-menu-label">Connect //</div>
+        <div class="side-social-links">
+          <a href="https://github.com/thytalha" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/thytalha/" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="mailto:mtpasha007@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+          <a href="https://wa.me/923363384213" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+      </div>
+    </aside>
 
     <!-- HERO -->
     <section id="hero">

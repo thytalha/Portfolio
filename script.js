@@ -161,6 +161,8 @@ const navSections = Array.from(navLinks)
 const homeLink = document.querySelector('.nav-links a[href="#hero"]');
 const navToggle = document.getElementById("nav-toggle");
 const navMenu = document.getElementById("nav-menu");
+const navOverlay = document.getElementById("nav-overlay");
+const sideMenuClose = document.getElementById("side-menu-close");
 const backToTop = document.getElementById("back-to-top");
 
 const setActiveNav = (id) => {
@@ -174,6 +176,7 @@ const closeNavMenu = () => {
   if (!navMenu || !navToggle) return;
   navMenu.classList.remove("open");
   navToggle.classList.remove("open");
+  if (navOverlay) navOverlay.classList.remove("open");
   navToggle.setAttribute("aria-expanded", "false");
 };
 
@@ -182,8 +185,17 @@ if (navToggle && navMenu) {
     e.stopPropagation();
     const isOpen = navMenu.classList.toggle("open");
     navToggle.classList.toggle("open", isOpen);
+    if (navOverlay) navOverlay.classList.toggle("open", isOpen);
     navToggle.setAttribute("aria-expanded", String(isOpen));
   });
+}
+
+if (sideMenuClose) {
+  sideMenuClose.addEventListener("click", closeNavMenu);
+}
+
+if (navOverlay) {
+  navOverlay.addEventListener("click", closeNavMenu);
 }
 
 navLinks.forEach((link) => {
@@ -198,15 +210,16 @@ document.addEventListener("click", (e) => {
   if (
     navMenu &&
     navMenu.classList.contains("open") &&
-    navbar &&
-    !navbar.contains(e.target)
+    !navMenu.contains(e.target) &&
+    navToggle &&
+    !navToggle.contains(e.target)
   ) {
     closeNavMenu();
   }
 });
 
-window.addEventListener("resize", () => {
-  if (window.innerWidth > 768) {
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape" && navMenu && navMenu.classList.contains("open")) {
     closeNavMenu();
   }
 });
