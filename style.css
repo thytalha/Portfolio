@@ -149,7 +149,7 @@ nav.scrolled {
 .nav-left {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 48px;
 }
 
 /* SIDEBAR OVERLAY */
@@ -431,6 +431,7 @@ nav.scrolled {
   gap: 5px;
   cursor: pointer;
   transition: all 0.3s;
+  margin-left: -16px;
 }
 .nav-toggle:hover {
   background: rgba(0, 165, 184, 0.1);
@@ -1599,6 +1600,12 @@ footer span {
   }
   nav.scrolled {
     padding: 12px 24px;
+  }
+  .nav-left {
+    gap: 20px;
+  }
+  .nav-toggle {
+    margin-left: -4px;
   }
   .nav-cta-btn {
     padding: 8px 14px;
