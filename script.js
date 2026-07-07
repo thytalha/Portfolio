@@ -178,6 +178,9 @@ const closeNavMenu = () => {
   navToggle.classList.remove("open");
   if (navOverlay) navOverlay.classList.remove("open");
   navToggle.setAttribute("aria-expanded", "false");
+  if (!document.querySelector(".cert-modal.active")) {
+    document.body.style.overflow = "";
+  }
 };
 
 if (navToggle && navMenu) {
@@ -187,6 +190,11 @@ if (navToggle && navMenu) {
     navToggle.classList.toggle("open", isOpen);
     if (navOverlay) navOverlay.classList.toggle("open", isOpen);
     navToggle.setAttribute("aria-expanded", String(isOpen));
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else if (!document.querySelector(".cert-modal.active")) {
+      document.body.style.overflow = "";
+    }
   });
 }
 
