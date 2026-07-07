@@ -129,9 +129,22 @@ nav.scrolled {
   color: var(--cyan);
   letter-spacing: 2px;
   text-transform: uppercase;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 .nav-logo span {
   color: var(--text);
+}
+.nav-logo-img {
+  height: 28px;
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.nav-logo:hover .nav-logo-img {
+  transform: scale(1.1) rotate(5deg);
 }
 .nav-links {
   display: flex;
@@ -1476,6 +1489,13 @@ footer span {
   }
   nav.scrolled {
     padding: 10px 16px;
+  }
+  .nav-logo {
+    font-size: 1rem;
+    gap: 8px;
+  }
+  .nav-logo-img {
+    height: 24px;
   }
   .nav-links {
     left: 16px;
