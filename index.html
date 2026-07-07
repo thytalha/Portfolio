@@ -1,526 +1,465 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-    <title>Muhammad Talha Pasha - Developer Portfolio</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="icon" href="favicon-32x32.png" type="image/x-icon" />
-  </head>
-  <body>
-    <!-- CUSTOM CURSOR -->
-    <div id="cursor"></div>
-    <div id="cursor-ring"></div>
 
-    <!-- STARFIELD -->
-    <canvas id="starfield"></canvas>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Muhammad Talha Pasha - Developer Portfolio</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="favicon-32x32.png" type="image/x-icon" />
+</head>
 
-    <!-- NAV -->
-    <!-- NAV -->
-    <nav id="navbar">
-      <div class="nav-left">
-        <button
-          class="nav-toggle"
-          id="nav-toggle"
-          type="button"
-          aria-expanded="false"
-          aria-controls="nav-menu"
-          aria-label="Toggle menu"
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-        <a href="#hero" class="nav-logo" aria-label="Home">
-          <img src="favicon-32x32.png" alt="Talha Logo" class="nav-logo-img" />
-          TALHA
-        </a>
-      </div>
-      <div class="nav-actions">
-        <a href="#contact" class="nav-cta-btn" aria-label="Contact and Hire Me">
-          <span class="status-dot"></span>
-          <span>Let's Talk</span>
-          <i class="fa-solid fa-paper-plane"></i>
-        </a>
-      </div>
-    </nav>
+<body>
+  <!-- CUSTOM CURSOR -->
+  <div id="cursor"></div>
+  <div id="cursor-ring"></div>
 
-    <!-- SIDEBAR OVERLAY -->
-    <div id="nav-overlay" class="side-menu-overlay"></div>
+  <!-- STARFIELD -->
+  <canvas id="starfield"></canvas>
 
-    <!-- LEFT SIDEBAR MENU -->
-    <aside id="nav-menu" class="side-menu" aria-label="Navigation Menu">
-      <div class="side-menu-header">
-        <a href="#hero" class="side-menu-logo" aria-label="Home">
-          <img src="favicon-32x32.png" alt="Talha Logo" class="side-logo-img" />
-          <span>TALHA</span>
-        </a>
-        <button id="side-menu-close" class="side-menu-close" aria-label="Close menu">
-          <i class="fa-solid fa-xmark"></i>
-        </button>
+  <!-- NAV -->
+  <!-- NAV -->
+  <nav id="navbar">
+    <div class="nav-left">
+      <button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu"
+        aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <a href="#hero" class="nav-logo" aria-label="Home">
+        <img src="favicon-32x32.png" alt="Talha Logo" class="nav-logo-img" />
+        TALHA
+      </a>
+    </div>
+    <div class="nav-actions">
+      <a href="#contact" class="nav-cta-btn" aria-label="Contact and Hire Me">
+        <span class="status-dot"></span>
+        <span>Let's Talk</span>
+        <i class="fa-solid fa-paper-plane"></i>
+      </a>
+    </div>
+  </nav>
+
+  <!-- SIDEBAR OVERLAY -->
+  <div id="nav-overlay" class="side-menu-overlay"></div>
+
+  <!-- LEFT SIDEBAR MENU -->
+  <aside id="nav-menu" class="side-menu" aria-label="Navigation Menu">
+    <div class="side-menu-header">
+      <a href="#hero" class="side-menu-logo" aria-label="Home">
+        <img src="favicon-32x32.png" alt="Talha Logo" class="side-logo-img" />
+        <span>TALHA</span>
+      </a>
+      <button id="side-menu-close" class="side-menu-close" aria-label="Close menu">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+    <div class="side-menu-content">
+      <div class="side-menu-label">Navigation //</div>
+      <ul class="nav-links side-nav-links">
+        <li><a href="#hero" class="side-nav-link"><span class="nav-num">01</span><span class="nav-text">Home</span></a>
+        </li>
+        <li><a href="#about" class="side-nav-link"><span class="nav-num">02</span><span
+              class="nav-text">About</span></a></li>
+        <li><a href="#skills" class="side-nav-link"><span class="nav-num">03</span><span
+              class="nav-text">Skills</span></a></li>
+        <li><a href="#projects" class="side-nav-link"><span class="nav-num">04</span><span
+              class="nav-text">Projects</span></a></li>
+        <li><a href="#certs" class="side-nav-link"><span class="nav-num">05</span><span
+              class="nav-text">Certificates</span></a></li>
+        <li><a href="#contact" class="side-nav-link"><span class="nav-num">06</span><span
+              class="nav-text">Contact</span></a></li>
+      </ul>
+    </div>
+    <div class="side-menu-footer">
+      <div class="side-menu-label">Connect //</div>
+      <div class="side-social-links">
+        <a href="https://github.com/thytalha" target="_blank" aria-label="GitHub"><i
+            class="fa-brands fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/thytalha/" target="_blank" aria-label="LinkedIn"><i
+            class="fa-brands fa-linkedin"></i></a>
+        <a href="mailto:mtpasha007@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+        <a href="https://wa.me/923288179714" target="_blank" aria-label="WhatsApp"><i
+            class="fa-brands fa-whatsapp"></i></a>
       </div>
-      <div class="side-menu-content">
-        <div class="side-menu-label">Navigation //</div>
-        <ul class="nav-links side-nav-links">
-          <li><a href="#hero" class="side-nav-link"><span class="nav-num">01</span><span class="nav-text">Home</span></a></li>
-          <li><a href="#about" class="side-nav-link"><span class="nav-num">02</span><span class="nav-text">About</span></a></li>
-          <li><a href="#skills" class="side-nav-link"><span class="nav-num">03</span><span class="nav-text">Skills</span></a></li>
-          <li><a href="#projects" class="side-nav-link"><span class="nav-num">04</span><span class="nav-text">Projects</span></a></li>
-          <li><a href="#certs" class="side-nav-link"><span class="nav-num">05</span><span class="nav-text">Certificates</span></a></li>
-          <li><a href="#contact" class="side-nav-link"><span class="nav-num">06</span><span class="nav-text">Contact</span></a></li>
-        </ul>
+    </div>
+  </aside>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-grid-bg"></div>
+    <div class="hero-glow"></div>
+    <div class="hero-glow2"></div>
+    <div class="hero-tag">Software Engineer · Lahore, Pakistan</div>
+    <h1 class="hero-name">Talha <em>Pasha</em></h1>
+    <div class="hero-cta">
+      <a href="#projects" class="btn btn-primary">View Projects</a>
+      <a href="Talha Resume.pdf" class="btn btn-primary" download="Muhammad_Talha_Pasha_Resume.pdf">Download Resume</a>
+      <a href="#contact" class="btn btn-primary">Get In Touch</a>
+    </div>
+    <div class="hero-scroll">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="section-label">01 - About</div>
+    <h2 class="section-title reveal">
+      Building things<br />that <span>matter</span>
+    </h2>
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <p>
+          I'm a <strong>Software Engineering undergraduate</strong> at
+          FAST-NUCES Lahore, passionate about crafting high-performance
+          software solutions. My work spans from low-level C++ systems to
+          interactive web applications.
+        </p>
+        <p>
+          I believe in writing <strong>clean, purposeful code</strong> that
+          solves real problems. Whether it's a desktop system managing
+          critical data or a real-time web platform, I bring the same
+          dedication to every line I write.
+        </p>
+        <p>
+          Currently seeking opportunities to grow within a
+          <strong>forward-thinking team</strong> where I can contribute
+          meaningfully while continuing to learn and evolve as an engineer.
+        </p>
       </div>
-      <div class="side-menu-footer">
-        <div class="side-menu-label">Connect //</div>
-        <div class="side-social-links">
-          <a href="https://github.com/thytalha" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-          <a href="https://www.linkedin.com/in/thytalha/" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-          <a href="mailto:mtpasha007@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
-          <a href="https://wa.me/923363384213" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+      <div class="about-stats reveal">
+        <div class="stat-card">
+          <span class="stat-num">6+</span>
+          <span class="stat-label">Projects Built</span>
         </div>
-      </div>
-    </aside>
-
-    <!-- HERO -->
-    <section id="hero">
-      <div class="hero-grid-bg"></div>
-      <div class="hero-glow"></div>
-      <div class="hero-glow2"></div>
-      <div class="hero-tag">Software Engineer · Lahore, Pakistan</div>
-      <h1 class="hero-name">Talha <em>Pasha</em></h1>
-      <div class="hero-cta">
-        <a href="#projects" class="btn btn-primary">View Projects</a>
-        <a
-          href="Talha Resume.pdf"
-          class="btn btn-primary"
-          download="Muhammad_Talha_Pasha_Resume.pdf"
-          >Download Resume</a
-        >
-        <a href="#contact" class="btn btn-primary">Get In Touch</a>
-      </div>
-      <div class="hero-scroll">
-        <span>Scroll</span>
-        <div class="scroll-line"></div>
-      </div>
-    </section>
-
-    <!-- ABOUT -->
-    <section id="about">
-      <div class="section-label">01 - About</div>
-      <h2 class="section-title reveal">
-        Building things<br />that <span>matter</span>
-      </h2>
-      <div class="about-grid">
-        <div class="about-text reveal">
-          <p>
-            I'm a <strong>Software Engineering undergraduate</strong> at
-            FAST-NUCES Lahore, passionate about crafting high-performance
-            software solutions. My work spans from low-level C++ systems to
-            interactive web applications.
-          </p>
-          <p>
-            I believe in writing <strong>clean, purposeful code</strong> that
-            solves real problems. Whether it's a desktop system managing
-            critical data or a real-time web platform, I bring the same
-            dedication to every line I write.
-          </p>
-          <p>
-            Currently seeking opportunities to grow within a
-            <strong>forward-thinking team</strong> where I can contribute
-            meaningfully while continuing to learn and evolve as an engineer.
-          </p>
+        <div class="stat-card">
+          <span class="stat-num">10+</span>
+          <span class="stat-label">Certifications</span>
         </div>
-        <div class="about-stats reveal">
-          <div class="stat-card">
-            <span class="stat-num">6+</span>
-            <span class="stat-label">Projects Built</span>
-          </div>
-          <div class="stat-card">
-            <span class="stat-num">10+</span>
-            <span class="stat-label">Certifications</span>
-          </div>
-          <div class="stat-card">
-            <span class="stat-num">C2</span>
-            <span class="stat-label">English Level</span>
-          </div>
-          <div class="stat-card">
-            <span class="stat-num">75/100</span>
-            <span class="stat-label">EF SET Score</span>
-          </div>
+        <div class="stat-card">
+          <span class="stat-num">C2</span>
+          <span class="stat-label">English Level</span>
         </div>
-      </div>
-    </section>
-
-    <!-- SKILLS -->
-    <section id="skills">
-      <div class="section-label">02 - Skills</div>
-      <h2 class="section-title reveal">Technical <span>arsenal</span></h2>
-      <div class="skills-grid">
-        <div class="skill-category reveal">
-          <div class="skill-cat-title">Languages</div>
-          <div class="skill-tags">
-            <span class="skill-tag tag-tech">C++</span>
-            <span class="skill-tag tag-tech">HTML</span>
-            <span class="skill-tag tag-tech">CSS</span>
-            <span class="skill-tag tag-tech">JavaScript</span>
-            <span class="skill-tag tag-tech">Python</span>
-            <span class="skill-tag tag-tech">SQL</span>
-          </div>
-        </div>
-        <div class="skill-category reveal">
-          <div class="skill-cat-title">Frameworks & Libraries</div>
-          <div class="skill-tags">
-            <span class="skill-tag tag-framework">WinForms</span>
-            <span class="skill-tag tag-framework">SFML</span>
-          </div>
-        </div>
-        <div class="skill-category reveal">
-          <div class="skill-cat-title">Tools & Platforms</div>
-          <div class="skill-tags">
-            <span class="skill-tag tag-tool">Git</span>
-            <span class="skill-tag tag-tool">GitHub</span>
-            <span class="skill-tag tag-tool">Vercel</span>
-            <span class="skill-tag tag-tool">Figma</span>
-            <span class="skill-tag tag-tool">SQL Server</span>
-            <span class="skill-tag tag-tool">AI Prompt Eng.</span>
-          </div>
-        </div>
-        <div class="skill-category reveal">
-          <div class="skill-cat-title">Creative & Soft Skills</div>
-          <div class="skill-tags">
-            <span class="skill-tag tag-creative">Graphics Design</span>
-            <span class="skill-tag tag-creative">Photo Editing</span>
-            <span class="skill-tag tag-creative">Video Editing</span>
-            <span class="skill-tag tag-creative">Content Writing</span>
-            <span class="skill-tag tag-creative">Freelancing</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- PROJECTS -->
-    <section id="projects">
-      <div class="section-label">03 - Projects</div>
-      <h2 class="section-title reveal">Selected <span>work</span></h2>
-      <div class="projects-grid">
-        <a
-          href="https://github.com/thytalha/Blood-Bank"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="project-card reveal"
-          aria-label="View Blood Bank Management System repository on GitHub"
-        >
-          <div class="project-number">01</div>
-          <div class="project-accent"></div>
-          <div class="project-date">March 2026</div>
-          <div class="project-name">
-            <span>Blood Bank Management System</span>
-            <span class="project-link-icon">
-              <i class="fa-brands fa-github"></i>
-              <i class="fa-solid fa-arrow-up-right-from-square"></i>
-            </span>
-          </div>
-          <p class="project-desc">
-            Desktop application built in C++ with WinForms GUI. Integrated SQL
-            Server schema to manage donor records, track blood inventory, and
-            process system queries efficiently.
-          </p>
-          <div class="project-tags">
-            <span class="project-tag">C++</span>
-            <span class="project-tag">WinForms</span>
-            <span class="project-tag">SQL Server</span>
-          </div>
-        </a>
-
-        <a
-          href="https://github.com/thytalha/Weather-App"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="project-card reveal"
-          aria-label="View Weather Forecast Platform repository on GitHub"
-        >
-          <div class="project-number">02</div>
-          <div class="project-accent"></div>
-          <div class="project-date">April 2026</div>
-          <div class="project-name">
-            <span>Weather Forecast Platform</span>
-            <span class="project-link-icon">
-              <i class="fa-brands fa-github"></i>
-              <i class="fa-solid fa-arrow-up-right-from-square"></i>
-            </span>
-          </div>
-          <p class="project-desc">
-            Dynamic web app delivering real-time weather updates, location
-            tracking, and 7-day forecasts. Integrated WeatherAPI.com and
-            deployed via Vercel with custom domain configuration.
-          </p>
-          <div class="project-tags">
-            <span class="project-tag">HTML</span>
-            <span class="project-tag">CSS</span>
-            <span class="project-tag">JavaScript</span>
-            <span class="project-tag">Vercel</span>
-          </div>
-        </a>
-
-        <a
-          href="https://github.com/thytalha/Flappy-Bird"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="project-card reveal"
-          aria-label="View Flappy Bird - SFML repository on GitHub"
-        >
-          <div class="project-number">03</div>
-          <div class="project-accent"></div>
-          <div class="project-date">November 2025</div>
-          <div class="project-name">
-            <span>Flappy Bird - SFML</span>
-            <span class="project-link-icon">
-              <i class="fa-brands fa-github"></i>
-              <i class="fa-solid fa-arrow-up-right-from-square"></i>
-            </span>
-          </div>
-          <p class="project-desc">
-            2D side-scrolling game in C++ using the SFML framework. Implemented
-            real-time game loop mechanics, simulated gravity, dynamic pipe
-            generation, precise collision detection, and score tracking.
-          </p>
-          <div class="project-tags">
-            <span class="project-tag">C++</span>
-            <span class="project-tag">SFML</span>
-            <span class="project-tag">Game Dev</span>
-          </div>
-        </a>
-
-        <a
-          href="https://github.com/thytalha/Brick-Breaker"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="project-card reveal"
-          aria-label="View Brick Breaker Arcade repository on GitHub"
-        >
-          <div class="project-number">04</div>
-          <div class="project-accent"></div>
-          <div class="project-date">April 2025</div>
-          <div class="project-name">
-            <span>Brick Breaker Arcade</span>
-            <span class="project-link-icon">
-              <i class="fa-brands fa-github"></i>
-              <i class="fa-solid fa-arrow-up-right-from-square"></i>
-            </span>
-          </div>
-          <p class="project-desc">
-            C++ arcade game with custom graphics rendering. Programmed 2D
-            physics for dynamic ball-paddle collision, multi-tier difficulty
-            scaling, and persistent file handling for game states.
-          </p>
-          <div class="project-tags">
-            <span class="project-tag">C++</span>
-            <span class="project-tag">2D Physics</span>
-            <span class="project-tag">File I/O</span>
-          </div>
-        </a>
-
-        <a
-          href="https://github.com/thytalha/Cash-Flow"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="project-card reveal"
-          aria-label="View Banking & ATM System repository on GitHub"
-        >
-          <div class="project-number">05</div>
-          <div class="project-accent"></div>
-          <div class="project-date">January 2025</div>
-          <div class="project-name">
-            <span>Banking & ATM System</span>
-            <span class="project-link-icon">
-              <i class="fa-brands fa-github"></i>
-              <i class="fa-solid fa-arrow-up-right-from-square"></i>
-            </span>
-          </div>
-          <p class="project-desc">
-            C++ banking simulator covering account creation, authentication,
-            deposits, withdrawals, and balance inquiry. Leveraged file handling
-            for persistent data storage with a structured menu-driven interface.
-          </p>
-          <div class="project-tags">
-            <span class="project-tag">C++</span>
-            <span class="project-tag">File Handling</span>
-            <span class="project-tag">OOP</span>
-          </div>
-        </a>
-
-        <a
-          href="https://github.com/thytalha/Battleship"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="project-card reveal"
-          aria-label="View Battleship - Console repository on GitHub"
-        >
-          <div class="project-number">06</div>
-          <div class="project-accent"></div>
-          <div class="project-date">November 2024</div>
-          <div class="project-name">
-            <span>Battleship - Console</span>
-            <span class="project-link-icon">
-              <i class="fa-brands fa-github"></i>
-              <i class="fa-solid fa-arrow-up-right-from-square"></i>
-            </span>
-          </div>
-          <p class="project-desc">
-            Two-player Battleship game in C++ featuring turn-based mechanics,
-            ship placement strategy, and hit/miss tracking. Built with emphasis
-            on modular functions and intuitive user interaction.
-          </p>
-          <div class="project-tags">
-            <span class="project-tag">C++</span>
-            <span class="project-tag">Console</span>
-            <span class="project-tag">Game Logic</span>
-          </div>
-        </a>
-      </div>
-    </section>
-
-    <!-- CERTIFICATIONS -->
-    <section id="certs">
-      <div class="section-label">04 - Credentials</div>
-      <h2 class="section-title reveal">
-        Certifications &<br /><span>Affiliations</span>
-      </h2>
-      <div id="certs-grid" class="certs-grid">
-        <!-- Dynamically rendered via script.js -->
-      </div>
-    </section>
-
-    <!-- CERTIFICATE MODAL -->
-    <div id="cert-modal" class="cert-modal" aria-hidden="true" role="dialog">
-      <div class="cert-modal-backdrop" id="cert-modal-backdrop"></div>
-      <div class="cert-modal-content">
-        <div class="cert-modal-header">
-          <div class="cert-modal-title-group">
-            <h3 id="modal-cert-title" class="cert-modal-title">Certificate Title</h3>
-            <span id="modal-cert-issuer" class="cert-modal-issuer">Issuer</span>
-          </div>
-          <div class="cert-modal-actions">
-            <a id="modal-cert-download" href="#" target="_blank" download class="cert-modal-btn" title="Open / Download in new tab">
-              <i class="fa-solid fa-arrow-up-right-from-square"></i>
-              <span>Open in Tab</span>
-            </a>
-            <button id="modal-cert-close" class="cert-modal-close" aria-label="Close modal">
-              <i class="fa-solid fa-xmark"></i>
-            </button>
-          </div>
-        </div>
-        <div id="cert-modal-body" class="cert-modal-body">
-          <!-- Dynamically inserted img or iframe/embed -->
+        <div class="stat-card">
+          <span class="stat-num">75/100</span>
+          <span class="stat-label">EF SET Score</span>
         </div>
       </div>
     </div>
+  </section>
 
-    <!-- CONTACT -->
-    <section id="contact">
-      <div class="section-label">05 - Contact</div>
-      <div class="contact-inner">
-        <div class="contact-left reveal">
-          <h2 class="section-title">Let's <span>connect</span></h2>
-          <div class="contact-links">
-            <a
-              href="https://mail.google.com/mail/?view=cm&fs=1&to=mtpasha007@gmail.com"
-              target="_blank"
-              rel="noopener"
-              class="contact-link"
-            >
-              <span class="contact-link-icon">
-                <i class="fa-solid fa-envelope"></i>
-              </span>
-              mtpasha007@gmail.com
-            </a>
-            <a
-              href="https://wa.me/923288179714"
-              target="_blank"
-              class="contact-link"
-            >
-              <span class="contact-link-icon">
-                <i class="fa-brands fa-whatsapp"></i>
-              </span>
-              +92 328 8179714
-            </a>
-            <a
-              href="https://www.linkedin.com/in/thytalha"
-              target="_blank"
-              class="contact-link"
-            >
-              <span class="contact-link-icon">
-                <i class="fa-brands fa-linkedin-in"></i>
-              </span>
-              linkedin.com/in/thytalha
-            </a>
-            <a
-              href="https://www.github.com/thytalha"
-              target="_blank"
-              class="contact-link"
-            >
-              <span class="contact-link-icon">
-                <i class="fa-brands fa-github"></i>
-              </span>
-              github.com/thytalha
-            </a>
-          </div>
-        </div>
-        <div class="contact-info reveal">
-          <div class="section-label" style="margin-bottom: 20px">
-            Open to opportunities
-          </div>
-          <p>
-            I'm currently pursuing my BS in Software Engineering at FAST-NUCES
-            Lahore and actively looking for internships, part-time roles, or
-            freelance projects where I can make a real impact.
-          </p>
-          <p>
-            Whether you have a challenging project in C++, a web application to
-            build, or just want to connect - my inbox is always open.
-          </p>
-          <a
-            href="https://mail.google.com/mail/?view=cm&fs=1&to=mtpasha007@gmail.com"
-            target="_blank"
-            rel="noopener"
-            class="btn btn-primary"
-            style="margin-top: 8px"
-            >Send a Message →</a
-          >
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="section-label">02 - Skills</div>
+    <h2 class="section-title reveal">Technical <span>arsenal</span></h2>
+    <div class="skills-grid">
+      <div class="skill-category reveal">
+        <div class="skill-cat-title">Languages</div>
+        <div class="skill-tags">
+          <span class="skill-tag tag-tech">C++</span>
+          <span class="skill-tag tag-tech">HTML</span>
+          <span class="skill-tag tag-tech">CSS</span>
+          <span class="skill-tag tag-tech">JavaScript</span>
+          <span class="skill-tag tag-tech">Python</span>
+          <span class="skill-tag tag-tech">SQL</span>
         </div>
       </div>
-    </section>
+      <div class="skill-category reveal">
+        <div class="skill-cat-title">Frameworks & Libraries</div>
+        <div class="skill-tags">
+          <span class="skill-tag tag-framework">WinForms</span>
+          <span class="skill-tag tag-framework">SFML</span>
+        </div>
+      </div>
+      <div class="skill-category reveal">
+        <div class="skill-cat-title">Tools & Platforms</div>
+        <div class="skill-tags">
+          <span class="skill-tag tag-tool">Git</span>
+          <span class="skill-tag tag-tool">GitHub</span>
+          <span class="skill-tag tag-tool">Vercel</span>
+          <span class="skill-tag tag-tool">Figma</span>
+          <span class="skill-tag tag-tool">SQL Server</span>
+          <span class="skill-tag tag-tool">AI Prompt Eng.</span>
+        </div>
+      </div>
+      <div class="skill-category reveal">
+        <div class="skill-cat-title">Creative & Soft Skills</div>
+        <div class="skill-tags">
+          <span class="skill-tag tag-creative">Graphics Design</span>
+          <span class="skill-tag tag-creative">Photo Editing</span>
+          <span class="skill-tag tag-creative">Video Editing</span>
+          <span class="skill-tag tag-creative">Content Writing</span>
+          <span class="skill-tag tag-creative">Freelancing</span>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <!-- FOOTER -->
-    <footer>
-      <span>Muhammad Talha Pasha</span>
-      <div>Built with &lt;/&gt; · Lahore, Pakistan · <span>2026</span></div>
-    </footer>
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="section-label">03 - Projects</div>
+    <h2 class="section-title reveal">Selected <span>work</span></h2>
+    <div class="projects-grid">
+      <a href="https://github.com/thytalha/Blood-Bank" target="_blank" rel="noopener noreferrer"
+        class="project-card reveal" aria-label="View Blood Bank Management System repository on GitHub">
+        <div class="project-number">01</div>
+        <div class="project-accent"></div>
+        <div class="project-date">March 2026</div>
+        <div class="project-name">
+          <span>Blood Bank Management System</span>
+          <span class="project-link-icon">
+            <i class="fa-brands fa-github"></i>
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </span>
+        </div>
+        <p class="project-desc">
+          Desktop application built in C++ with WinForms GUI. Integrated SQL
+          Server schema to manage donor records, track blood inventory, and
+          process system queries efficiently.
+        </p>
+        <div class="project-tags">
+          <span class="project-tag">C++</span>
+          <span class="project-tag">WinForms</span>
+          <span class="project-tag">SQL Server</span>
+        </div>
+      </a>
 
-    <button
-      class="back-to-top"
-      id="back-to-top"
-      type="button"
-      aria-label="Back to top"
-      title="Back to top"
-    >
-      <i class="fa-solid fa-arrow-up"></i>
-    </button>
+      <a href="https://github.com/thytalha/Weather-App" target="_blank" rel="noopener noreferrer"
+        class="project-card reveal" aria-label="View Weather Forecast Platform repository on GitHub">
+        <div class="project-number">02</div>
+        <div class="project-accent"></div>
+        <div class="project-date">April 2026</div>
+        <div class="project-name">
+          <span>Weather Forecast Platform</span>
+          <span class="project-link-icon">
+            <i class="fa-brands fa-github"></i>
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </span>
+        </div>
+        <p class="project-desc">
+          Dynamic web app delivering real-time weather updates, location
+          tracking, and 7-day forecasts. Integrated WeatherAPI.com and
+          deployed via Vercel with custom domain configuration.
+        </p>
+        <div class="project-tags">
+          <span class="project-tag">HTML</span>
+          <span class="project-tag">CSS</span>
+          <span class="project-tag">JavaScript</span>
+          <span class="project-tag">Vercel</span>
+        </div>
+      </a>
 
-    <script src="script.js"></script>
-    <script>
-      // this disables the right-click menu across your entire website
-      document.addEventListener("contextmenu", function (event) {
-        event.preventDefault();
-      });
-    </script>
-  </body>
+      <a href="https://github.com/thytalha/Flappy-Bird" target="_blank" rel="noopener noreferrer"
+        class="project-card reveal" aria-label="View Flappy Bird - SFML repository on GitHub">
+        <div class="project-number">03</div>
+        <div class="project-accent"></div>
+        <div class="project-date">November 2025</div>
+        <div class="project-name">
+          <span>Flappy Bird - SFML</span>
+          <span class="project-link-icon">
+            <i class="fa-brands fa-github"></i>
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </span>
+        </div>
+        <p class="project-desc">
+          2D side-scrolling game in C++ using the SFML framework. Implemented
+          real-time game loop mechanics, simulated gravity, dynamic pipe
+          generation, precise collision detection, and score tracking.
+        </p>
+        <div class="project-tags">
+          <span class="project-tag">C++</span>
+          <span class="project-tag">SFML</span>
+          <span class="project-tag">Game Dev</span>
+        </div>
+      </a>
+
+      <a href="https://github.com/thytalha/Brick-Breaker" target="_blank" rel="noopener noreferrer"
+        class="project-card reveal" aria-label="View Brick Breaker Arcade repository on GitHub">
+        <div class="project-number">04</div>
+        <div class="project-accent"></div>
+        <div class="project-date">April 2025</div>
+        <div class="project-name">
+          <span>Brick Breaker Arcade</span>
+          <span class="project-link-icon">
+            <i class="fa-brands fa-github"></i>
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </span>
+        </div>
+        <p class="project-desc">
+          C++ arcade game with custom graphics rendering. Programmed 2D
+          physics for dynamic ball-paddle collision, multi-tier difficulty
+          scaling, and persistent file handling for game states.
+        </p>
+        <div class="project-tags">
+          <span class="project-tag">C++</span>
+          <span class="project-tag">2D Physics</span>
+          <span class="project-tag">File I/O</span>
+        </div>
+      </a>
+
+      <a href="https://github.com/thytalha/Cash-Flow" target="_blank" rel="noopener noreferrer"
+        class="project-card reveal" aria-label="View Banking & ATM System repository on GitHub">
+        <div class="project-number">05</div>
+        <div class="project-accent"></div>
+        <div class="project-date">January 2025</div>
+        <div class="project-name">
+          <span>Banking & ATM System</span>
+          <span class="project-link-icon">
+            <i class="fa-brands fa-github"></i>
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </span>
+        </div>
+        <p class="project-desc">
+          C++ banking simulator covering account creation, authentication,
+          deposits, withdrawals, and balance inquiry. Leveraged file handling
+          for persistent data storage with a structured menu-driven interface.
+        </p>
+        <div class="project-tags">
+          <span class="project-tag">C++</span>
+          <span class="project-tag">File Handling</span>
+          <span class="project-tag">OOP</span>
+        </div>
+      </a>
+
+      <a href="https://github.com/thytalha/Battleship" target="_blank" rel="noopener noreferrer"
+        class="project-card reveal" aria-label="View Battleship - Console repository on GitHub">
+        <div class="project-number">06</div>
+        <div class="project-accent"></div>
+        <div class="project-date">November 2024</div>
+        <div class="project-name">
+          <span>Battleship - Console</span>
+          <span class="project-link-icon">
+            <i class="fa-brands fa-github"></i>
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </span>
+        </div>
+        <p class="project-desc">
+          Two-player Battleship game in C++ featuring turn-based mechanics,
+          ship placement strategy, and hit/miss tracking. Built with emphasis
+          on modular functions and intuitive user interaction.
+        </p>
+        <div class="project-tags">
+          <span class="project-tag">C++</span>
+          <span class="project-tag">Console</span>
+          <span class="project-tag">Game Logic</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS -->
+  <section id="certs">
+    <div class="section-label">04 - Credentials</div>
+    <h2 class="section-title reveal">
+      Certifications &<br /><span>Affiliations</span>
+    </h2>
+    <div id="certs-grid" class="certs-grid">
+      <!-- Dynamically rendered via script.js -->
+    </div>
+  </section>
+
+  <!-- CERTIFICATE MODAL -->
+  <div id="cert-modal" class="cert-modal" aria-hidden="true" role="dialog">
+    <div class="cert-modal-backdrop" id="cert-modal-backdrop"></div>
+    <div class="cert-modal-content">
+      <div class="cert-modal-header">
+        <div class="cert-modal-title-group">
+          <h3 id="modal-cert-title" class="cert-modal-title">Certificate Title</h3>
+          <span id="modal-cert-issuer" class="cert-modal-issuer">Issuer</span>
+        </div>
+        <div class="cert-modal-actions">
+          <a id="modal-cert-download" href="#" target="_blank" download class="cert-modal-btn"
+            title="Open / Download in new tab">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            <span>Open in Tab</span>
+          </a>
+          <button id="modal-cert-close" class="cert-modal-close" aria-label="Close modal">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+      </div>
+      <div id="cert-modal-body" class="cert-modal-body">
+        <!-- Dynamically inserted img or iframe/embed -->
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="section-label">05 - Contact</div>
+    <div class="contact-inner">
+      <div class="contact-left reveal">
+        <h2 class="section-title">Let's <span>connect</span></h2>
+        <div class="contact-links">
+          <a href="mailto:mtpasha007@gmail.com" target="_blank" rel="noopener" class="contact-link">
+            <span class="contact-link-icon">
+              <i class="fa-solid fa-envelope"></i>
+            </span>
+            mtpasha007@gmail.com
+          </a>
+          <a href="https://wa.me/923288179714" target="_blank" class="contact-link">
+            <span class="contact-link-icon">
+              <i class="fa-brands fa-whatsapp"></i>
+            </span>
+            +92 328 8179714
+          </a>
+          <a href="https://www.linkedin.com/in/thytalha" target="_blank" class="contact-link">
+            <span class="contact-link-icon">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </span>
+            linkedin.com/in/thytalha
+          </a>
+          <a href="https://www.github.com/thytalha" target="_blank" class="contact-link">
+            <span class="contact-link-icon">
+              <i class="fa-brands fa-github"></i>
+            </span>
+            github.com/thytalha
+          </a>
+        </div>
+      </div>
+      <div class="contact-info reveal">
+        <div class="section-label" style="margin-bottom: 20px">
+          Open to opportunities
+        </div>
+        <p>
+          I'm currently pursuing my BS in Software Engineering at FAST-NUCES
+          Lahore and actively looking for internships, part-time roles, or
+          freelance projects where I can make a real impact.
+        </p>
+        <p>
+          Whether you have a challenging project in C++, a web application to
+          build, or just want to connect - my inbox is always open.
+        </p>
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=mtpasha007@gmail.com" target="_blank" rel="noopener"
+          class="btn btn-primary" style="margin-top: 8px">Send a Message →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <span>Muhammad Talha Pasha</span>
+    <div>Built with &lt;/&gt; · Lahore, Pakistan · <span>2026</span></div>
+  </footer>
+
+  <button class="back-to-top" id="back-to-top" type="button" aria-label="Back to top" title="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <script src="script.js"></script>
+  <script>
+    // this disables the right-click menu across your entire website
+    document.addEventListener("contextmenu", function (event) {
+      event.preventDefault();
+    });
+  </script>
+</body>
+
 </html>
