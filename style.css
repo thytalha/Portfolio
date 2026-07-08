@@ -41,6 +41,12 @@ body {
   position: relative;
 }
 
+html.no-scroll,
+body.no-scroll {
+  overflow: hidden !important;
+  overscroll-behavior: none !important;
+}
+
 /* CUSTOM CURSOR - Only enabled for PC / devices with mouse and hover support */
 #cursor,
 #cursor-ring {
@@ -165,6 +171,7 @@ nav.scrolled {
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.4s ease;
+  overscroll-behavior: contain;
 }
 .side-menu-overlay.open {
   opacity: 1;
@@ -1190,7 +1197,7 @@ section {
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 1000;
+  z-index: 2000;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1198,6 +1205,7 @@ section {
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  overscroll-behavior: contain;
 }
 .cert-modal.active {
   opacity: 1;
@@ -1212,6 +1220,7 @@ section {
   background: rgba(8, 8, 14, 0.85);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
+  overscroll-behavior: contain;
 }
 .cert-modal-content {
   position: relative;
@@ -1227,6 +1236,7 @@ section {
   overflow: hidden;
   transform: scale(0.95) translateY(20px);
   transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  overscroll-behavior: contain;
 }
 .cert-modal.active .cert-modal-content {
   transform: scale(1) translateY(0);

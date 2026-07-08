@@ -172,15 +172,42 @@ const setActiveNav = (id) => {
   });
 };
 
+const lockPageScroll = () => {
+  document.documentElement.classList.add("no-scroll");
+  document.body.classList.add("no-scroll");
+  document.documentElement.style.overflow = "hidden";
+  document.body.style.overflow = "hidden";
+};
+
+const unlockPageScroll = () => {
+  const isMenuOpen = navMenu && navMenu.classList.contains("open");
+  const isModalActive = certModal && certModal.classList.contains("active");
+  if (!isMenuOpen && !isModalActive) {
+    document.documentElement.classList.remove("no-scroll");
+    document.body.classList.remove("no-scroll");
+    document.documentElement.style.overflow = "";
+    document.body.style.overflow = "";
+  }
+};
+
+const preventOverlayScroll = (e) => {
+  if (
+    (navOverlay && navOverlay.classList.contains("open") && (e.target === navOverlay || (navMenu && !navMenu.contains(e.target)))) ||
+    (certModal && certModal.classList.contains("active") && (e.target === certModalBackdrop || e.target === certModal || (modalCertBody && !modalCertBody.contains(e.target))))
+  ) {
+    e.preventDefault();
+  }
+};
+window.addEventListener("wheel", preventOverlayScroll, { passive: false });
+window.addEventListener("touchmove", preventOverlayScroll, { passive: false });
+
 const closeNavMenu = () => {
   if (!navMenu || !navToggle) return;
   navMenu.classList.remove("open");
   navToggle.classList.remove("open");
   if (navOverlay) navOverlay.classList.remove("open");
   navToggle.setAttribute("aria-expanded", "false");
-  if (!document.querySelector(".cert-modal.active")) {
-    document.body.style.overflow = "";
-  }
+  unlockPageScroll();
 };
 
 if (navToggle && navMenu) {
@@ -191,9 +218,9 @@ if (navToggle && navMenu) {
     if (navOverlay) navOverlay.classList.toggle("open", isOpen);
     navToggle.setAttribute("aria-expanded", String(isOpen));
     if (isOpen) {
-      document.body.style.overflow = "hidden";
-    } else if (!document.querySelector(".cert-modal.active")) {
-      document.body.style.overflow = "";
+      lockPageScroll();
+    } else {
+      unlockPageScroll();
     }
   });
 }
@@ -420,7 +447,7 @@ if (certsGrid) {
 
       certModal.classList.add("active");
       certModal.setAttribute("aria-hidden", "false");
-      document.body.style.overflow = "hidden";
+      lockPageScroll();
     });
 
     certsGrid.appendChild(card);
@@ -431,7 +458,7 @@ const closeModal = () => {
   if (!certModal) return;
   certModal.classList.remove("active");
   certModal.setAttribute("aria-hidden", "true");
-  document.body.style.overflow = "";
+  unlockPageScroll();
   setTimeout(() => {
     if (!certModal.classList.contains("active") && modalCertBody) {
       modalCertBody.innerHTML = "";
