@@ -584,3 +584,36 @@ document
       card.style.transition = "all 0.4s";
     });
   });
+
+// ── EMAILJS CONTACT FORM ──
+(function() {
+    emailjs.init("YOUR_PUBLIC_KEY_HERE"); 
+})();
+
+const contactForm = document.getElementById('contact-form');
+if (contactForm) {
+    contactForm.addEventListener('submit', function(event) {
+        event.preventDefault(); 
+        
+        const btn = document.getElementById('submit-btn');
+        const originalText = btn.innerText;
+        btn.innerText = 'Sending...';
+
+        emailjs.sendForm('YOUR_SERVICE_ID_HERE', 'template_thytalha', this)
+            .then(function() {
+                btn.innerText = 'Message Sent!';
+                contactForm.reset(); 
+                
+                setTimeout(() => { 
+                    btn.innerText = originalText; 
+                }, 3000);
+            }, function(error) {
+                btn.innerText = 'Failed to Send';
+                console.log('FAILED...', error);
+                
+                setTimeout(() => { 
+                    btn.innerText = originalText; 
+                }, 3000);
+            });
+    });
+}
