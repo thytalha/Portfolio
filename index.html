@@ -444,35 +444,38 @@
 
   <!-- FOOTER -->
   <footer>
-    <div id="footer-content" style="width: 100%; max-width: 600px;">
-      <div class="footer-form-container">
-        <h3>Drop a <span>Message</span></h3>
-        <form id="contact-form">
-          <div class="input-group">
-            <label>Name</label>
-            <input type="text" name="user_name" required placeholder="Enter Your Name">
-          </div>
-          <div class="input-group">
-            <label>Email</label>
-            <input type="email" name="user_email" required placeholder="Enter Your Email">
-          </div>
-          <div class="input-group">
-            <label>Subject</label>
-            <input type="text" name="subject" required placeholder="Subject/Reference">
-          </div>
-          <div class="input-group">
-            <label>Message</label>
-            <textarea name="message" rows="4" required placeholder="Type your message here..."></textarea>
-          </div>
-          <button type="submit" id="submit-btn" class="btn btn-primary"
-            style="width: 100%; justify-content: center; margin-top: 8px;">Send Message</button>
-        </form>
+    <div class="footer-container">
+      <div class="footer-top-grid">
+        <!-- Left Column: Text -->
+        <div class="footer-text-col">
+          <h2>GET IN <span>TOUCH</span></h2>
+          <p>Reach out to explore how we can work together to build robust software solutions and aesthetic web applications.</p>
+        </div>
+
+        <!-- Right Column: Form -->
+        <div class="footer-form-col">
+          <form id="contact-form">
+            <div class="form-row">
+              <input type="text" name="user_name" required placeholder="Name*">
+              <input type="email" name="user_email" required placeholder="Email address*">
+            </div>
+            <input type="text" name="subject" required placeholder="Subject*">
+            <textarea name="message" rows="4" required placeholder="Message*"></textarea>
+            
+            <button type="submit" id="submit-btn" class="btn btn-primary submit-align-left">Submit</button>
+          </form>
+        </div>
       </div>
-    </div>
-    <div class="footer-bottom"
-      style="width: 100%; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
-      <span>Talha Pasha</span>
-      <div>Lahore, Pakistan · <span>2026</span></div>
+
+      <!-- Bottom Row: Divider, Name, Socials -->
+      <div class="footer-bottom-bar">
+        <div class="footer-copyright">Talha</div>
+        <div class="footer-socials">
+          <a href="mailto:mtpasha007@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+          <a href="https://www.linkedin.com/in/thytalha/" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="https://wa.me/923288179714" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+      </div>
     </div>
   </footer>
 
