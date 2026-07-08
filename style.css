@@ -1400,14 +1400,18 @@ section {
 
 /* FOOTER */
 footer {
-  padding: 32px 10vw;
+  padding: 48px 10vw 36px;
+  background: var(--bg3);
   border-top: 1px solid var(--border);
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  gap: 32px;
+  justify-content: center;
   align-items: center;
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   color: var(--muted);
   letter-spacing: 1px;
+  width: 100%;
 }
 footer span {
   color: var(--cyan);
