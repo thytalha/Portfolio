@@ -225,9 +225,9 @@ nav.scrolled {
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  border: 1px solid var(--border);
-  background: transparent;
-  color: var(--text);
+  border: 1px solid rgba(0, 165, 184, 0.3);
+  background: rgba(0, 165, 184, 0.12);
+  color: var(--cyan);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -235,8 +235,9 @@ nav.scrolled {
   transition: all 0.3s;
 }
 .side-menu-close:hover {
-  background: rgba(255, 255, 255, 0.1);
-  color: var(--cyan);
+  background: rgba(244, 63, 94, 0.2);
+  border-color: var(--rose);
+  color: var(--rose);
   transform: rotate(90deg);
 }
 
