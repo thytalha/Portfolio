@@ -587,7 +587,7 @@ document
 
 // ── EMAILJS CONTACT FORM ──
 (function() {
-    emailjs.init("YOUR_PUBLIC_KEY_HERE"); 
+    emailjs.init("4PJ7UcJhYmZP4Jccj"); 
 })();
 
 const contactForm = document.getElementById('contact-form');
@@ -599,7 +599,7 @@ if (contactForm) {
         const originalText = btn.innerText;
         btn.innerText = 'Sending...';
 
-        emailjs.sendForm('YOUR_SERVICE_ID_HERE', 'template_thytalha', this)
+        emailjs.sendForm('thytalha_007', 'template_thytalha', this)
             .then(function() {
                 btn.innerText = 'Message Sent!';
                 contactForm.reset(); 
