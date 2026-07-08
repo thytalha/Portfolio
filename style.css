@@ -1265,10 +1265,10 @@ section {
 .cert-modal-close {
   width: 36px;
   height: 36px;
-  border-radius: 6px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: var(--text);
+  border-radius: 50%;
+  border: 1px solid rgba(0, 165, 184, 0.3);
+  background: rgba(0, 165, 184, 0.12);
+  color: var(--cyan);
   font-size: 1.1rem;
   display: flex;
   align-items: center;
