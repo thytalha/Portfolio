@@ -375,7 +375,6 @@ const certModalBackdrop = document.getElementById("cert-modal-backdrop");
 const certModalClose = document.getElementById("modal-cert-close");
 const modalCertTitle = document.getElementById("modal-cert-title");
 const modalCertIssuer = document.getElementById("modal-cert-issuer");
-const modalCertDownload = document.getElementById("modal-cert-download");
 const modalCertBody = document.getElementById("cert-modal-body");
 
 if (certsGrid) {
@@ -412,10 +411,6 @@ if (certsGrid) {
       modalCertTitle.textContent = cert.title;
       modalCertIssuer.textContent = cert.issuer;
       const fileUrl = `Certificates/${encodeURIComponent(cert.filename)}`;
-      if (modalCertDownload) {
-        modalCertDownload.href = fileUrl;
-        modalCertDownload.setAttribute("download", cert.filename);
-      }
 
       if (cert.type === "pdf" || cert.filename.toLowerCase().endsWith(".pdf")) {
         modalCertBody.innerHTML = `<iframe src="${fileUrl}#toolbar=0" title="${cert.title}" style="width:100%; height:100%; border:none; border-radius:4px;"></iframe>`;

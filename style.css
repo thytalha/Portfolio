@@ -1262,25 +1262,6 @@ section {
   align-items: center;
   gap: 12px;
 }
-.cert-modal-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 16px;
-  border-radius: 6px;
-  background: rgba(0, 165, 184, 0.12);
-  border: 1px solid rgba(0, 165, 184, 0.3);
-  color: var(--cyan);
-  font-size: 0.85rem;
-  font-weight: 600;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-.cert-modal-btn:hover {
-  background: var(--cyan);
-  color: #000;
-  box-shadow: 0 0 16px rgba(0, 165, 184, 0.4);
-}
 .cert-modal-close {
   width: 36px;
   height: 36px;
