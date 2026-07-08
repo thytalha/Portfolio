@@ -57,7 +57,7 @@ document.addEventListener("mouseenter", (e) => {
 
 document
   .querySelectorAll(
-    "a,button,.project-card,.stat-card,.skill-category,.cert-card",
+    "a,button,.project-card,.stat-card,.skill-category,.cert-card,.cert-modal-close,.side-menu-close",
   )
   .forEach((el) => {
     el.addEventListener("mouseenter", () => {
@@ -440,9 +440,9 @@ if (certsGrid) {
       const fileUrl = `Certificates/${encodeURIComponent(cert.filename)}`;
 
       if (cert.type === "pdf" || cert.filename.toLowerCase().endsWith(".pdf")) {
-        modalCertBody.innerHTML = `<iframe src="${fileUrl}#toolbar=0" title="${cert.title}" style="width:100%; height:100%; border:none; border-radius:4px;"></iframe>`;
+        modalCertBody.innerHTML = `<iframe src="${fileUrl}#toolbar=0" title="${cert.title}" style="width:100%; height:100%; border:none; border-radius:4px; pointer-events: none;"></iframe>`;
       } else {
-        modalCertBody.innerHTML = `<img src="${fileUrl}" alt="${cert.title}" style="max-width:100%; max-height:100%; object-fit:contain; border-radius:4px; box-shadow: 0 8px 32px rgba(0,0,0,0.5);" />`;
+        modalCertBody.innerHTML = `<img src="${fileUrl}" alt="${cert.title}" style="max-width:100%; max-height:100%; object-fit:contain; border-radius:4px; box-shadow: 0 8px 32px rgba(0,0,0,0.5); pointer-events: none;" />`;
       }
 
       certModal.classList.add("active");

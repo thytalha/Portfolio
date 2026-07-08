@@ -54,8 +54,12 @@ body.no-scroll {
 }
 
 @media (hover: hover) and (pointer: fine) {
-  body {
-    cursor: none;
+  body,
+  html,
+  *,
+  *::before,
+  *::after {
+    cursor: none !important;
   }
   #cursor {
     display: block;
@@ -75,7 +79,7 @@ body.no-scroll {
       height 0.3s,
       background 0.3s,
       opacity 0.3s;
-    mix-blend-mode: multiply;
+    box-shadow: 0 0 10px rgba(0, 165, 184, 0.6);
     opacity: 0;
   }
   #cursor-ring {
@@ -1217,9 +1221,9 @@ section {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(8, 8, 14, 0.85);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  background: rgba(10, 15, 30, 0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   overscroll-behavior: contain;
 }
 .cert-modal-content {
