@@ -654,3 +654,28 @@ if (contactForm) {
             });
     });
 }
+
+// ── FORCE DOWNLOAD NAME ──
+function forceDownload(event, url, filename) {
+  // Only override if we are on http/https to avoid breaking local file:// testing
+  if (window.location.protocol === 'file:') return; 
+  
+  event.preventDefault();
+  fetch(url)
+    .then(response => response.blob())
+    .then(blob => {
+      const blobUrl = window.URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = blobUrl;
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      window.URL.revokeObjectURL(blobUrl);
+    })
+    .catch(error => {
+      console.error('Download failed:', error);
+      // Fallback
+      window.open(url, '_blank');
+    });
+}
