@@ -498,6 +498,27 @@
 
   <script src="script.js"></script>
   <script>
+    function forceDownload(event, url, filename) {
+      if (window.location.protocol === 'file:') return; 
+      event.preventDefault();
+      fetch(url)
+        .then(response => response.blob())
+        .then(blob => {
+          const blobUrl = window.URL.createObjectURL(blob);
+          const a = document.createElement('a');
+          a.href = blobUrl;
+          a.download = filename;
+          document.body.appendChild(a);
+          a.click();
+          a.remove();
+          window.URL.revokeObjectURL(blobUrl);
+        })
+        .catch(error => {
+          console.error('Download failed:', error);
+          window.open(url, '_blank');
+        });
+    }
+
     // this disables the right-click menu across your entire website
     document.addEventListener("contextmenu", function (event) {
       event.preventDefault();
