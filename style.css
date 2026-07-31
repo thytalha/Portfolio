@@ -11,7 +11,7 @@
   --text: #1e293b;
   --muted: #475569;
   --border: rgba(0, 165, 184, 0.2);
-  --glass: rgba(255, 255, 255, 0.35); /* more transparent glassy effect */
+  --glass: rgba(255, 255, 255, 0.35); 
 }
 
 *,
@@ -47,7 +47,7 @@ body.no-scroll {
   overscroll-behavior: none !important;
 }
 
-/* CUSTOM CURSOR - Only enabled for PC / devices with mouse and hover support */
+
 #cursor,
 #cursor-ring {
   display: none;
@@ -103,7 +103,7 @@ body.no-scroll {
   }
 }
 
-/* CANVAS */
+
 #starfield {
   position: fixed;
   top: 0;
@@ -114,7 +114,7 @@ body.no-scroll {
   pointer-events: none;
 }
 
-/* NAV */
+
 nav {
   position: fixed;
   top: 0;
@@ -162,7 +162,7 @@ nav.scrolled {
   gap: 48px;
 }
 
-/* SIDEBAR OVERLAY */
+
 .side-menu-overlay {
   position: fixed;
   top: 0;
@@ -182,7 +182,7 @@ nav.scrolled {
   pointer-events: auto;
 }
 
-/* SIDEBAR DRAWER */
+
 .side-menu {
   position: fixed;
   top: 0;
@@ -207,7 +207,7 @@ nav.scrolled {
   transform: translateX(0);
 }
 
-/* SIDEBAR HEADER */
+
 .side-menu-header {
   display: flex;
   align-items: center;
@@ -252,7 +252,7 @@ nav.scrolled {
   transform: rotate(90deg);
 }
 
-/* SIDEBAR CONTENT & LINKS */
+
 .side-menu-content {
   padding: 24px 0;
   flex-grow: 1;
@@ -313,7 +313,7 @@ nav.scrolled {
   display: none;
 }
 
-/* SIDEBAR FOOTER */
+
 .side-menu-footer {
   padding-top: 24px;
   border-top: 1px solid var(--border);
@@ -466,7 +466,7 @@ nav.scrolled {
   transform: translateY(-7px) rotate(-45deg);
 }
 
-/* BACK TO TOP */
+
 .back-to-top {
   position: fixed;
   right: 28px;
@@ -504,7 +504,7 @@ nav.scrolled {
   transform: translateY(-2px);
 }
 
-/* SECTIONS */
+
 section {
   position: relative;
   z-index: 1;
@@ -513,7 +513,7 @@ section {
   overflow-x: clip;
 }
 
-/* HERO */
+
 #hero {
   min-height: 100vh;
   min-height: 100dvh;
@@ -691,7 +691,7 @@ section {
   animation: breathe 8s ease-in-out infinite reverse;
 }
 
-/* ABOUT */
+
 #about {
   padding: 80px 10vw;
 }
@@ -788,7 +788,7 @@ section {
   display: block;
 }
 
-/* SKILLS */
+
 #skills {
   padding: 80px 10vw;
   background: linear-gradient(
@@ -899,7 +899,7 @@ section {
   filter: brightness(1.4);
 }
 
-/* PROJECTS */
+
 #projects {
   padding: 80px 10vw;
 }
@@ -1033,7 +1033,7 @@ section {
   margin-bottom: 4px;
 }
 
-/* CERTIFICATIONS */
+
 #certs {
   padding: 80px 10vw;
   background: linear-gradient(
@@ -1194,7 +1194,7 @@ section {
   letter-spacing: 1px;
 }
 
-/* CERTIFICATE MODAL */
+
 .cert-modal {
   position: fixed;
   top: 0;
@@ -1324,7 +1324,7 @@ section {
   border-radius: 4px;
 }
 
-/* CONTACT */
+
 #contact {
   padding: 80px 10vw 60px;
 }
@@ -1394,7 +1394,7 @@ section {
   margin-bottom: 24px;
 }
 
-/* NEW TWO-COLUMN FOOTER */
+
 footer {
   padding: 80px 10vw 40px;
   background: var(--bg3);
@@ -1511,7 +1511,7 @@ footer {
   transform: translateY(-3px);
 }
 
-/* RESPONSIVE STACKING FOR MOBILE */
+
 @media (max-width: 768px) {
   .footer-top-grid {
     grid-template-columns: 1fr;
@@ -1529,7 +1529,7 @@ footer {
   }
 }
 
-/* SCROLL REVEAL */
+
 .reveal {
   opacity: 0;
   transform: translate3d(var(--reveal-x, 0), var(--reveal-y, 40px), 0)
@@ -1577,7 +1577,7 @@ footer {
   --reveal-rotate: 8deg;
 }
 
-/* ANIMATIONS */
+
 @keyframes fadeUp {
   from {
     opacity: 0;
@@ -1697,7 +1697,7 @@ footer {
   animation: blink 1s infinite;
 }
 
-/* RESPONSIVE */
+
 @media (max-width: 1024px) {
   #hero,
   #about,

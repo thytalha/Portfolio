@@ -1,4 +1,4 @@
-// ── CURSOR ──
+
 const cur = document.getElementById("cursor");
 const ring = document.getElementById("cursor-ring");
 let mx = -100,
@@ -84,7 +84,7 @@ document
     });
   });
 
-// ── STARFIELD ──
+
 const canvas = document.getElementById("starfield");
 const ctx = canvas.getContext("2d");
 let stars = [],
@@ -118,7 +118,7 @@ function drawStars() {
 }
 drawStars();
 
-// ── TYPING ──
+
 const roles = [
   "C++ Developer",
   "Web Developer",
@@ -152,7 +152,7 @@ function type() {
 }
 setTimeout(type, 1200);
 
-// ── NAVBAR SCROLL ──
+
 const navbar = document.getElementById("navbar");
 const navLinks = document.querySelectorAll(".nav-links a");
 const navSections = Array.from(navLinks)
@@ -270,7 +270,7 @@ window.addEventListener("scroll", () => {
     backToTop.classList.toggle("show", scrolled > window.innerHeight);
   }
 
-  // Parallax elements
+
   const heroGlow = document.querySelector(".hero-glow");
   const heroGlow2 = document.querySelector(".hero-glow2");
   const heroGrid = document.querySelector(".hero-grid-bg");
@@ -286,7 +286,7 @@ if (backToTop) {
   });
 }
 
-// ── NAV ACTIVE LINK ──
+
 if (navSections.length) {
   const navObserver = new IntersectionObserver(
     (entries) => {
@@ -302,7 +302,7 @@ if (navSections.length) {
   navSections.forEach((section) => navObserver.observe(section));
 }
 
-// ── CERTIFICATES GALLERY & MODAL ──
+
 const certificatesData = [
   {
     title: "Claude 101",
@@ -489,7 +489,7 @@ window.addEventListener("keydown", (e) => {
   }
 });
 
-// ── SCROLL REVEAL ──
+
 const addReveal = (elements, options = {}) => {
   const list = Array.from(elements || []).filter(Boolean);
   list.forEach((el, i) => {
@@ -593,7 +593,7 @@ document
   .querySelectorAll(".reveal")
   .forEach((el) => revealObserver.observe(el));
 
-// ── CARD GLOW & 3D TILT ──
+
 document
   .querySelectorAll(".project-card, .skill-category, .stat-card, .cert-card")
   .forEach((card) => {
@@ -602,11 +602,11 @@ document
       const x = e.clientX - r.left;
       const y = e.clientY - r.top;
 
-      // For glow
+
       card.style.setProperty("--mx", (x / r.width) * 100 + "%");
       card.style.setProperty("--my", (y / r.height) * 100 + "%");
 
-      // For 3D Tilt
+
       const centerX = r.width / 2;
       const centerY = r.height / 2;
       const rotateX = ((y - centerY) / centerY) * -10;
@@ -622,7 +622,7 @@ document
     });
   });
 
-// ── EMAILJS CONTACT FORM ──
+
 (function() {
     emailjs.init("4PJ7UcJhYmZP4Jccj"); 
 })();
@@ -655,9 +655,9 @@ if (contactForm) {
     });
 }
 
-// ── FORCE DOWNLOAD NAME ──
+
 function forceDownload(event, url, filename) {
-  // Only override if we are on http/https to avoid breaking local file:// testing
+
   if (window.location.protocol === 'file:') return; 
   
   event.preventDefault();
@@ -675,7 +675,7 @@ function forceDownload(event, url, filename) {
     })
     .catch(error => {
       console.error('Download failed:', error);
-      // Fallback
+
       window.open(url, '_blank');
     });
 }
