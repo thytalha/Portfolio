@@ -838,12 +838,14 @@ section {
 .skill-cat-title {
   font-family: "Syne", sans-serif;
   font-size: 0.75rem;
+  font-weight: normal;
   letter-spacing: 3px;
   text-transform: uppercase;
   color: var(--cyan);
   margin-bottom: 20px;
   padding-bottom: 12px;
   border-bottom: 1px solid var(--border);
+  line-height: inherit;
 }
 .skill-tags {
   display: flex;
@@ -980,6 +982,7 @@ section {
   font-weight: 700;
   color: var(--text);
   line-height: 1.3;
+  margin: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1416,7 +1419,7 @@ footer {
   margin-bottom: 60px;
 }
 
-.footer-text-col h2 {
+.footer-text-col .footer-heading {
   font-family: "Syne", sans-serif;
   font-size: clamp(2.5rem, 5vw, 4rem);
   font-weight: 800;
@@ -1426,7 +1429,7 @@ footer {
   text-transform: uppercase;
 }
 
-.footer-text-col h2 span {
+.footer-text-col .footer-heading span {
   color: var(--cyan);
 }
 
@@ -1447,6 +1450,22 @@ footer {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 16px;
+}
+
+.form-field {
+  display: contents;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
 }
 
 .footer-form-col input,
