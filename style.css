@@ -12,6 +12,8 @@
   --muted: #475569;
   --border: rgba(0, 165, 184, 0.2);
   --glass: rgba(255, 255, 255, 0.35); 
+  --font-heading: 'Space Grotesk', sans-serif;
+  --font-body: 'Inter', sans-serif;
 }
 
 *,
@@ -34,11 +36,15 @@ html {
 body {
   background: var(--bg);
   color: var(--text);
-  font-family: "DM Mono", monospace;
+  font-family: var(--font-body);
   width: 100%;
   max-width: 100%;
   overflow-x: hidden;
   position: relative;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
 }
 
 html.no-scroll,
@@ -133,7 +139,6 @@ nav.scrolled {
   padding: 14px 60px;
 }
 .nav-logo {
-  font-family: "Syne", sans-serif;
   font-weight: 800;
   font-size: 1.1rem;
   color: var(--cyan);
@@ -219,7 +224,6 @@ nav.scrolled {
   display: flex;
   align-items: center;
   gap: 10px;
-  font-family: "Syne", sans-serif;
   font-weight: 800;
   font-size: 1.1rem;
   color: var(--cyan);
@@ -261,7 +265,6 @@ nav.scrolled {
   justify-content: center;
 }
 .side-menu-label {
-  font-family: "DM Mono", monospace;
   font-size: 0.7rem;
   color: var(--cyan);
   letter-spacing: 2px;
@@ -281,7 +284,6 @@ nav.scrolled {
   display: flex;
   align-items: center;
   gap: 16px;
-  font-family: "Syne", sans-serif;
   font-size: 1.3rem;
   font-weight: 700;
   color: var(--text);
@@ -291,7 +293,6 @@ nav.scrolled {
   padding: 6px 0;
 }
 .side-nav-links li a .nav-num {
-  font-family: "DM Mono", monospace;
   font-size: 0.8rem;
   color: var(--muted);
   transition: color 0.3s;
@@ -356,7 +357,6 @@ nav.scrolled {
   background: linear-gradient(135deg, rgba(0, 165, 184, 0.15), rgba(124, 58, 237, 0.15));
   border: 1px solid rgba(0, 165, 184, 0.4);
   color: var(--cyan);
-  font-family: "DM Mono", monospace;
   font-size: 0.75rem;
   font-weight: 500;
   letter-spacing: 1px;
@@ -540,7 +540,6 @@ section {
   opacity: 0.5;
 }
 .hero-name {
-  font-family: "Syne", sans-serif;
   font-size: clamp(4.5rem, 10vw, 8.5rem);
   font-weight: 800;
   line-height: 0.95;
@@ -582,7 +581,6 @@ section {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-family: "DM Mono", monospace;
   font-size: 0.75rem;
   letter-spacing: 1.5px;
   text-transform: uppercase;
@@ -713,7 +711,6 @@ section {
   background: var(--border);
 }
 .section-title {
-  font-family: "Syne", sans-serif;
   font-size: clamp(2rem, 4vw, 3.2rem);
   font-weight: 800;
   line-height: 1.1;
@@ -729,7 +726,6 @@ section {
   align-items: start;
 }
 .about-text p {
-  font-family: "DM Mono", monospace;
   font-size: 0.9rem;
   line-height: 1.9;
   color: var(--muted);
@@ -773,7 +769,6 @@ section {
   animation: glowPulse 0.6s ease-out;
 }
 .stat-num {
-  font-family: "Syne", sans-serif;
   font-size: 2rem;
   font-weight: 800;
   color: var(--cyan);
@@ -836,7 +831,6 @@ section {
   opacity: 1;
 }
 .skill-cat-title {
-  font-family: "Syne", sans-serif;
   font-size: 0.75rem;
   font-weight: normal;
   letter-spacing: 3px;
@@ -957,7 +951,6 @@ section {
   opacity: 1;
 }
 .project-number {
-  font-family: "Syne", sans-serif;
   font-size: 3.5rem;
   font-weight: 800;
   color: rgba(0, 165, 184, 0.06);
@@ -977,7 +970,6 @@ section {
   color: var(--muted);
 }
 .project-name {
-  font-family: "Syne", sans-serif;
   font-size: 1.2rem;
   font-weight: 700;
   color: var(--text);
@@ -1156,7 +1148,6 @@ section {
   gap: 8px;
 }
 .cert-card-title {
-  font-family: "Syne", sans-serif;
   font-weight: 700;
   font-size: 1.1rem;
   color: var(--text);
@@ -1264,7 +1255,6 @@ section {
   gap: 4px;
 }
 .cert-modal-title {
-  font-family: "Syne", sans-serif;
   font-size: 1.25rem;
   font-weight: 700;
   color: var(--text);
@@ -1420,7 +1410,6 @@ footer {
 }
 
 .footer-text-col .footer-heading {
-  font-family: "Syne", sans-serif;
   font-size: clamp(2.5rem, 5vw, 4rem);
   font-weight: 800;
   color: var(--text);
@@ -1434,7 +1423,6 @@ footer {
 }
 
 .footer-text-col p {
-  font-family: "DM Mono", monospace;
   font-size: 1.05rem;
   line-height: 1.8;
   color: var(--muted);
@@ -1476,7 +1464,6 @@ footer {
   border: none;
   background: rgba(255, 255, 255, 0.9);
   color: #121212;
-  font-family: "DM Mono", monospace;
   font-size: 0.9rem;
   outline: none;
   transition: box-shadow 0.3s ease;
@@ -1508,7 +1495,6 @@ footer {
 }
 
 .footer-copyright {
-  font-family: "Syne", sans-serif;
   font-size: 1.1rem;
   font-weight: 600;
   color: var(--text);
